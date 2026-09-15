@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+/* Class-based dark mode variant (kept for any future dark: utility use —
+   the theme switch itself works by swapping the raw tokens below). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Tokens that never change with theme — the Hero, Booking CTA, and Contact
+   video sections stay deliberately cinematic/dark full-bleed backgrounds in
+   both themes (a washed-out white hero would look wrong on a photography
+   site), so this gradient lives outside the .dark/.light blocks below. */
+:root {
+  --raw-gradient-hero: linear-gradient(160deg, #101720 0%, #08090b 55%, #08090b 100%);
+}
+
+/* Raw palette + font sources, themed. Dark is the default (matches the
+   site's original design and is what renders before the no-FOUC script in
+   layout.tsx applies the visitor's saved preference). Named distinctly
+   from the Tailwind theme tokens below so `@theme inline` can map
+   <token> -> var(<raw source>) without any self-referential circularity. */
+:root,
+.dark {
+  --raw-ink: #08090b;
+  --raw-surface: #101215;
+  --raw-surface-2: #181b1f;
+  --raw-border: #2d3339;
+  --raw-text: #f0f2f4;
+  --raw-text-muted: #9aa3ab;
+
+  --raw-accent: #5b93d1;
+  --raw-accent-soft: #8ab4e0;
+  --raw-accent-strong: #3f6ba8;
+
+  --raw-shadow-glow: 0 0 60px -12px rgba(91, 147, 209, 0.35);
+  --raw-color-scheme: dark;
+}
+
+/* Premium light theme — cool ivory-blue, not a plain white inversion.
+   The blue accent is deepened a step for contrast against light surfaces. */
+.light {
+  --raw-ink: #f5f7f9;
+  --raw-surface: #e9edf2;
+  --raw-surface-2: #dbe3ea;
+  --raw-border: #c5d0d9;
+  --raw-text: #16202b;
+  --raw-text-muted: #5b6b78;
+
+  --raw-accent: #2f5f96;
+  --raw-accent-soft: #4a7cb5;
+  --raw-accent-strong: #1f4570;
+
+  --raw-shadow-glow: 0 0 60px -12px rgba(47, 95, 150, 0.22);
+  --raw-color-scheme: light;
+}
+
+@theme inline {
+  --color-ink: var(--raw-ink);
+  --color-surface: var(--raw-surface);
+  --color-surface-2: var(--raw-surface-2);
+  --color-border: var(--raw-border);
+  --color-text: var(--raw-text);
+  --color-text-muted: var(--raw-text-muted);
+
+  --color-accent: var(--raw-accent);
+  --color-accent-soft: var(--raw-accent-soft);
+  --color-accent-strong: var(--raw-accent-strong);
+
+  --font-display: var(--font-display-src);
+  --font-body: var(--font-body-src);
+  --font-display-ar: var(--font-display-ar-src);
+  --font-body-ar: var(--font-body-ar-src);
+
+  --shadow-glow: var(--raw-shadow-glow);
+}
+
+html {
+  scroll-behavior: auto;
+  color-scheme: var(--raw-color-scheme);
+}
+
+body {
+  background: var(--raw-ink);
+  color: var(--raw-text);
+  font-family: var(--font-body-src), system-ui, sans-serif;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display-src), serif;
+}
+
+/* Arabic text needs Arabic-supporting font faces — Playfair/Manrope don't
+   cover Arabic glyphs. Applied via [dir="rtl"] rather than a lang attribute
+   selector so it engages the instant the locale switches. */
+[dir="rtl"] body {
+  font-family: var(--font-body-ar-src), system-ui, sans-serif;
+}
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] .font-display {
+  font-family: var(--font-display-ar-src), serif;
+}
+
+::selection {
+  background: var(--raw-accent);
+  color: var(--raw-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--raw-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.glass {
+  background: color-mix(in srgb, var(--raw-surface) 55%, transparent);
+  backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid color-mix(in srgb, var(--raw-text) 10%, transparent);
+}
+
+/* The unscrolled navbar is transparent and always floats over the Hero,
+   which — like the Booking CTA and Contact video bands — stays cinematic
+   dark in both themes. Its text must therefore stay light-on-dark too,
+   regardless of the active site theme, or it goes dark-on-dark in the
+   light theme. Values match the permanent dark palette's text tokens. */
+.text-hero-text {
+  color: #f0f2f4;
+}
+.text-hero-text-muted {
+  color: #9aa3ab;
+}
+.text-hero-accent {
+  color: #5b93d1;
+}
+.hero-gradient-accent {
+  background: linear-gradient(120deg, #8ab4e0, #5b93d1, #3f6ba8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+/* .glass's theme-tinted version — for controls floating over the Contact
+   video band, which (like the Hero) stays cinematic dark in both themes. */
+.glass-hero {
+  background: color-mix(in srgb, #101215 55%, transparent);
+  backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid color-mix(in srgb, white 10%, transparent);
+}
+
+.text-gradient-accent {
+  background: linear-gradient(120deg, var(--raw-accent-soft), var(--raw-accent), var(--raw-accent-strong));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Global net beneath JS-level prefers-reduced-motion checks. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* RTL mirrors the marquee's travel direction so it still reads as
+   "flowing" rather than fighting the text direction. */
+[dir="rtl"] .animate-marquee {
+  animation-name: marquee-rtl;
+}
+@keyframes marquee-rtl {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(50%);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
