@@ -97,14 +97,14 @@ export const portfolioContentAr: Record<string, LocalizedContent> = {
 // ---- Videos (src/config/videos-data.ts) ----
 export const videoContentAr: Record<string, LocalizedContent> = {
   "broll-01": { title: "البراحة — البيت القطيفي", description: "لقطات بي-رول لبيت تراثي قطيفي تقليدي." },
-  "broll-02": { title: "فيديو Pure التجاري للمنتجات", description: "تصوير استوديو لمنتجات معزز الترطيب من Pure." },
+  "broll-02": { title: "فيديو Pure التجاري للمنتجات", description: "" },
   "broll-03": { title: "جولة جمالية في مقهى إنوفيشن", description: "لقطات سلسة لمقهى إنوفيشن بمناسبة الذكرى الرابعة." },
-  "broll-04": { title: "حرفية المعجنات السينمائية في Jo's", description: "عرض بصري مذهل بأسلوب B-roll يوثق فن صناعة المعجنات، بلقطات بطيئة عالية الإطارات ولقطات ماكرو درامية للمكونات وإضاءة سينمائية دافئة تُبرز حرفية الشيف جو." },
-  "broll-05": { title: "آيس كريم البحار النابض بالحياة", description: "لقطة تجارية منعشة وعالية الطاقة بأسلوب B-roll تُبرز آيس كريم البحار المميز بحركة بطيئة فائقة لالتقاط الملمس." },
-  "aroll-01": { title: "مقابلة ماس", description: "مقطع مقابلة أمام الكاميرا." },
-  "aroll-02": { title: "مسك × مسمار", description: "مقطع مقابلة تعاون بين علامتين تجاريتين." },
-  "aroll-03": { title: "سباق القطيف — نشيطة 2023", description: "تغطية ميدانية لفعالية سباق نشيطة في القطيف." },
-  "introoutro-01": { title: "أهل البيت — مقدمة عميل", description: "مقدمة متحركة بعلامة تجارية صُممت لمشروع فيديو أحد العملاء." },
+  "broll-04": { title: "حرفية المعجنات السينمائية في Jo's", description: "" },
+  "broll-05": { title: "آيس كريم البحار", description: "" },
+  "aroll-01": { title: "مقابلة ماس", description: "" },
+  "aroll-02": { title: "مسك × مسمار", description: "" },
+  "aroll-03": { title: "سباق القطيف — نشيطة 2023", description: "تغطية ميدانية لفعالية سباق في القطيف." },
+  "introoutro-01": { title: "أهل البيت — مقدمة عميل", description: "" },
 };
 
 // ---- Services (src/config/services-data.ts) ----
