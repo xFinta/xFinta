@@ -5,11 +5,13 @@ filenames — each one is already wired up in `src/config/videos-data.ts`.
 
 | Video file | Thumbnail file | Config entry (id) | Title | Status |
 |---|---|---|---|---|
-| b-roll-01.mp4 | b-roll-01.png | broll-01 | Al-Baraha — The Qatifi House | ✅ video + thumbnail uploaded, title corrected from the real thumbnail |
-| b-roll-02.mp4 | b-roll-02.png | broll-02 | Behind the Scenes — Studio Day | ✅ video uploaded — ❌ thumbnail missing — TODO: verify title/description |
-| b-roll-03.mp4 | b-roll-03.png | broll-03 | Architecture Walkthrough B-roll | ✅ video uploaded — ❌ thumbnail missing — TODO: verify title/description |
-| b-roll-04.mp4 | b-roll-04.png | broll-04 | Wedding Day Details | ✅ video uploaded — ❌ thumbnail missing — TODO: verify title/description |
-| b-roll-05.mp4 | b-roll-05.png | broll-05 | *(placeholder)* | ✅ video uploaded — ❌ thumbnail missing — TODO: title/description/duration all unset |
+| b-roll-01.mp4 | b-roll-01.png | broll-01 | Al-Baraha — The Qatifi House | ✅ video + thumbnail uploaded, title verified from the real thumbnail |
+| b-roll-02.mp4 | b-roll-02.png | broll-02 | Pure Commercial Product Video | ✅ video + thumbnail uploaded, title verified from the real thumbnail |
+| b-roll-03.mp4 | b-roll-03.png | broll-03 | Innovation Coffee Shop Aesthetic Tour | ✅ video + thumbnail uploaded, title verified from the real thumbnail |
+| b-roll-04.mp4 | b-roll-04.png | broll-04 | Jo's Cinematic Pastry Craft | ✅ video + thumbnail uploaded, title verified from the real thumbnail |
+| b-roll-05.mp4 | b-roll-05.png | broll-05 | Al Bahaar's Vibrant Ice Cream | ✅ video + thumbnail uploaded, title verified from the real thumbnail |
+
+All 5 durations in `videos-data.ts` are still unverified guesses (a thumbnail confirms the *subject*, not the *length*) — confirm the real lengths if you want the on-card duration badges accurate.
 
 Every entry above already has its `posterSrc` pointed at the matching
 `.png` filename in `videos-data.ts` — drop the image in with that exact

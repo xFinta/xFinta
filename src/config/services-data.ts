@@ -54,7 +54,7 @@ export const services: Service[] = [
     id: "s-wedding",
     title: "Wedding Photography",
     description:
-      "Full-day coverage that captures the vows, the chaos, and everything in between — delivered as a story, not a checklist.",
+      "Delivered as a story, not a checklist.",
     icon: Heart,
     ctaLabel: "Book",
   },

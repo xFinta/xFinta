@@ -5,11 +5,12 @@ filenames — wired up in `src/config/videos-data.ts`.
 
 | Video file | Thumbnail file | Config entry (id) | Title | Status |
 |---|---|---|---|---|
-| intro-01.mp4 | intro-01.png | introoutro-01 | xFinta Signature Intro | ✅ video uploaded — ❌ thumbnail missing — TODO: verify title/description/duration |
+| intro-01.mp4 | intro-01.png | introoutro-01 | Ahl Al-Bayt — Client Intro | ✅ video + thumbnail uploaded — TODO: confirm the exact client/project name (the thumbnail is Arabic calligraphy, my reading of it is a best guess) and the real duration |
 
 `posterSrc` for this entry is already pointed at `intro-01.png` in
-`videos-data.ts` — drop the image in with that name and it shows up
-automatically.
+`videos-data.ts` — the thumbnail turned out to be a **client's** branded
+intro (Arabic calligraphy reading roughly "أهل البيت"), not xFinta's own —
+the title was corrected from "xFinta Signature Intro" accordingly.
 
 Only one entry exists right now — there was an "outro" placeholder here
 before, but it had no real file behind it and was removed. If you have a

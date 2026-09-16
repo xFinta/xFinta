@@ -30,28 +30,28 @@ export function BookingCTABand() {
         alt=""
         className="absolute inset-0 h-full w-full"
       />
+      {/* Unlike the Hero, this band follows the site theme (dark overlay in
+          dark mode, light/white overlay in light mode) rather than staying
+          permanently cinematic-dark — only the Hero ("first page") is
+          pinned dark in both themes. */}
       <div
         aria-hidden
-        className="absolute inset-0 bg-ink/75"
-        style={{
-          background:
-            "linear-gradient(180deg, rgba(8,9,11,0.55) 0%, rgba(8,9,11,0.85) 100%)",
-        }}
+        className="absolute inset-0 bg-gradient-to-b from-ink/55 to-ink/85"
       />
 
       <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center gap-8 px-6 text-center">
-        <span className="text-xs font-semibold uppercase tracking-[0.3em] text-hero-accent">
+        <span className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">
           {t.booking.eyebrow}
         </span>
 
         <TextReveal
           as="h2"
           text={t.booking.heading}
-          className="font-display text-4xl sm:text-5xl md:text-6xl leading-tight text-hero-text"
+          className="font-display text-4xl sm:text-5xl md:text-6xl leading-tight text-text"
         />
 
         <motion.p
-          className="max-w-lg text-hero-text-muted"
+          className="max-w-lg text-text-muted"
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

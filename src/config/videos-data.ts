@@ -19,17 +19,13 @@ import type { VideoItem } from "@/types";
  */
 export const videos: VideoItem[] = [
   // ---- B-roll Videos (public/media/video-production/b-roll/) ----
-  // TODO: b-roll-02 through 05 have real .mp4 files now, but their titles/
-  // descriptions/durations below are still placeholder text I wrote before
-  // any real file existed — I can't watch video content, so these are
-  // unverified guesses. broll-01 has been corrected using its real
-  // thumbnail as a reference; add a matching posterSrc image for the rest
-  // (see the README in this folder) so I can verify/correct those too.
+  // All 5 thumbnails now exist, and titles/descriptions below have been
+  // verified against them. durationSeconds is still a guess for every
+  // entry below (I can see a thumbnail frame, not play the clip) — confirm
+  // the real lengths if you want the on-card duration badges accurate.
   {
-    // Corrected from the real thumbnail — it's a title card reading
-    // "البراحة" (Al-Baraha) / "البيت القطيفي" (The Qatifi House), a
-    // heritage/traditional architecture piece, not "Product Line B-roll".
-    // TODO: durationSeconds is still a guess (58s) — confirm the real length.
+    // Title card reading "البراحة" (Al-Baraha) / "البيت القطيفي" (The
+    // Qatifi House), a heritage/traditional architecture piece.
     id: "broll-01",
     title: "Al-Baraha — The Qatifi House",
     category: "B-roll Videos",
@@ -44,13 +40,12 @@ export const videos: VideoItem[] = [
     featured: true,
   },
   {
-    // TODO: no posterSrc yet — add b-roll-02.png to this folder (see the
-    // README) and I can verify/correct this title & description from it,
-    // same as broll-01.
+    // Thumbnail shows "PURE" humidifier-booster bottles + a Black+Decker
+    // humidifier (Arabic label: "تكنولوجيا الرذاذ" — spray technology).
     id: "broll-02",
     title: "Pure Commercial Product Video",
     category: "B-roll Videos",
-    description: "Puer products studio shoot.",
+    description: "Pure humidifier booster products studio shoot.",
     durationSeconds: 22,
     source: {
       type: "local",
@@ -60,7 +55,9 @@ export const videos: VideoItem[] = [
     posterSrc: "/media/video-production/b-roll/b-roll-02.png",
   },
   {
-    // TODO: no posterSrc yet — add b-roll-03.png to this folder.
+    // Thumbnail shows a blurred storefront sign reading "INNOVATION TASTE
+    // — 4TH ANNIVERSARY" — a coffee-shop anniversary promo, not a plain
+    // architecture walkthrough.
     id: "broll-03",
     title: "Innovation Coffee Shop Aesthetic Tour",
     category: "B-roll Videos",
@@ -74,7 +71,7 @@ export const videos: VideoItem[] = [
     posterSrc: "/media/video-production/b-roll/b-roll-03.png",
   },
   {
-    // TODO: no posterSrc yet — add b-roll-04.png to this folder.
+    // Thumbnail confirms the "JO'S BAKERY" logo seal — matches the title.
     id: "broll-04",
     title: "Jo's Cinematic Pastry Craft",
     category: "B-roll Videos",
@@ -90,12 +87,8 @@ export const videos: VideoItem[] = [
     posterSrc: "/media/video-production/b-roll/b-roll-04.png",
   },
   {
-    // TODO: b-roll-05.mp4 exists in public/media/video-production/b-roll/
-    // but had no config entry at all, so it wasn't showing up anywhere on
-    // the site — I added this entry so it's at least visible, but the
-    // title, description, and durationSeconds below are complete guesses
-    // since I don't know what's actually in the clip. Add b-roll-05.png
-    // for a real thumbnail and I can fix the title/description from it.
+    // Thumbnail confirms coconut-flake soft-serve with an "xFinta" watermark
+    // — matches the title.
     id: "broll-05",
     title: "Al Bahaar's Vibrant Ice Cream",
     category: "B-roll Videos",
@@ -152,13 +145,17 @@ export const videos: VideoItem[] = [
 
   // ---- Intro/Outro (public/media/video-production/intro-outro/) ----
   {
-    // TODO: intro-01.mp4 now exists, but the title/description below were
-    // written before the real file existed — add intro-01.png (see the
-    // README) so I can verify/correct them from the real thumbnail.
+    // CORRECTED: the thumbnail is Arabic calligraphy reading what looks
+    // like "أهل البيت" (Ahl Al-Bayt) in gold/teal on a dark background —
+    // this is a CLIENT's branded intro, not xFinta's own (the old title
+    // was wrong — xFinta's own wordmark is the Latin "xFinta" logotype
+    // used elsewhere on this site, not Arabic calligraphy). Double-check
+    // the exact client/project name — calligraphic text can be ambiguous
+    // to read — and correct if this guess is off.
     id: "introoutro-01",
-    title: "xFinta Signature Intro",
+    title: "Ahl Al-Bayt — Client Intro",
     category: "Intro/Outro",
-    description: "Branded animated intro used to open client video projects.",
+    description: "Branded animated intro created for a client's video project.",
     durationSeconds: 10, // TODO: guessed, replace with the real duration
     source: {
       type: "local",
