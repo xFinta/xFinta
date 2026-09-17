@@ -1,6 +1,11 @@
 import { ImageResponse } from "next/og";
 import { siteConfig } from "@/config";
 
+// Required for `output: "export"` — declares this route as static so
+// ImageResponse renders to a plain .png file at build time instead of on
+// every request (which GitHub Pages, having no server, can't do anyway).
+export const dynamic = "force-static";
+
 export const alt = `${siteConfig.brandName} — ${siteConfig.name}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";

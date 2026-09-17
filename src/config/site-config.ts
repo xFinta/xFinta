@@ -42,10 +42,10 @@ export const siteConfig: SiteConfig = {
       "architecture photography",
       "cinematic video",
     ],
-    // TODO: "xfinta.com" is a made-up placeholder domain — I don't know if
-    // you own this domain or plan to use a different one. This value feeds
-    // the sitemap, robots.txt, canonical URLs, and Open Graph tags, so it
-    // needs to match wherever the site actually ends up deployed.
-    siteUrl: "https://xfinta.com",
+    // Deployed via GitHub Pages under the repo subpath — this value feeds
+    // the sitemap, robots.txt, canonical URLs, and Open Graph tags. Update
+    // both this AND `BASE_PATH` in next.config.ts together if the repo is
+    // ever renamed or a custom domain is added.
+    siteUrl: "https://xfinta.github.io/xFinta",
   },
 };

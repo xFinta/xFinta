@@ -5,6 +5,7 @@ import { useInView } from "framer-motion";
 import { Pause, Play } from "lucide-react";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import { useLocaleContext } from "@/context/LocaleProvider";
+import { withBasePath } from "@/lib/base-path";
 import type { ContactBackgroundVideo as ContactBackgroundVideoConfig } from "@/types";
 
 interface ContactBackgroundVideoProps {
@@ -53,11 +54,11 @@ export function ContactBackgroundVideo({ video, containerRef }: ContactBackgroun
             loop
             playsInline
             preload="metadata"
-            poster={video.poster}
+            poster={video.poster ? withBasePath(video.poster) : undefined}
             onError={() => setHasError(true)}
             className="absolute inset-0 h-full w-full object-cover"
           >
-            <source src={video.src} type="video/mp4" />
+            <source src={withBasePath(video.src)} type="video/mp4" />
           </video>
         )}
 

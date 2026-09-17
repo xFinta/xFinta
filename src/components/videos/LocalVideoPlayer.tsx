@@ -1,8 +1,10 @@
+import { withBasePath } from "@/lib/base-path";
+
 export function LocalVideoPlayer({ src }: { src: string }) {
   return (
     <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-surface">
       <video
-        src={src}
+        src={withBasePath(src)}
         controls
         autoPlay
         playsInline

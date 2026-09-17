@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Camera } from "lucide-react";
 import { getPlaceholderStyle } from "@/lib/placeholder-gradients";
+import { withBasePath } from "@/lib/base-path";
 import { cn } from "@/lib/utils";
 import type { ImageOrientation } from "@/types";
 
@@ -47,7 +48,7 @@ export function PlaceholderImage({
     return (
       <div className={cn("relative overflow-hidden", orientationAspect[orientation], className)}>
         <Image
-          src={src}
+          src={withBasePath(src)}
           alt={alt}
           fill
           sizes={sizes}

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Play } from "lucide-react";
 import { getPlaceholderStyle } from "@/lib/placeholder-gradients";
+import { withBasePath } from "@/lib/base-path";
 import { useLocaleContext } from "@/context/LocaleProvider";
 import { cn } from "@/lib/utils";
 
@@ -38,7 +39,7 @@ export function PlaceholderVideo({
     >
       {showPoster && (
         <Image
-          src={posterSrc}
+          src={withBasePath(posterSrc)}
           alt=""
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
