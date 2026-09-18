@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://xfinta.github.io/xFinta/sitemap.xml
