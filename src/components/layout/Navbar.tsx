@@ -14,7 +14,7 @@ import { LanguageToggle } from "./LanguageToggle";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
-  const { scrollTo } = useLenisContext();
+  const { scrollTo, lenis } = useLenisContext();
   const { t } = useLocaleContext();
   const sectionIds = navLinks.map((link) => link.sectionId);
   const activeId = useScrollSpy(sectionIds);
@@ -30,6 +30,11 @@ export function Navbar() {
   });
 
   const handleNavigate = (sectionId: string) => {
+    // The mobile menu calls lenis.stop() while open (see useLockBodyScroll).
+    // If the menu's link is tapped, this runs before that stop is undone by
+    // React's effect cleanup, so Lenis must be resumed here first — otherwise
+    // lenis.scrollTo() silently no-ops while isStopped is still true.
+    lenis?.start();
     scrollTo(`#${sectionId}`);
   };
 
